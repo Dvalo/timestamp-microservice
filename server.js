@@ -27,7 +27,6 @@ app.get("/api/timestamp/:date?", function (req, res) {
     let tempUnix = new Date(dateParam).getTime();
     let dateUTC = new Date(dateParam).toUTCString();
     res.json({unix: tempUnix, utc: dateUTC});
-
   } else if (isNaN(new Date(Number(dateParam))) === false) {
     let dateUTC = new Date(Number(dateParam)).toUTCString();
     res.json({ unix: Number(dateParam), utc: dateUTC});
